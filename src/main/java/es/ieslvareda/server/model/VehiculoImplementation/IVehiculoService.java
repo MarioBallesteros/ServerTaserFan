@@ -1,4 +1,4 @@
-package es.ieslvareda.server.model;
+package es.ieslvareda.server.model.VehiculoImplementation;
 
 import es.ieslvareda.model.Result;
 import es.ieslvareda.model.Vehiculo;

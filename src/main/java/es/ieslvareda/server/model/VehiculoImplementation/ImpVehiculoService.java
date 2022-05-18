@@ -1,16 +1,14 @@
-package es.ieslvareda.server.model;
+package es.ieslvareda.server.model.VehiculoImplementation;
 
 import es.ieslvareda.model.MyDataSource;
-import es.ieslvareda.model.Result;
 import es.ieslvareda.model.Vehiculo;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImpVehiculoService implements IVehiculoService{
+public class ImpVehiculoService implements IVehiculoService {
 
     @Override
     public List<Vehiculo> getAll(){
