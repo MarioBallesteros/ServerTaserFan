@@ -1,34 +1,30 @@
 package es.ieslvareda.server.model;
 
+import es.ieslvareda.model.Coche;
 import es.ieslvareda.model.MyDataSource;
 import es.ieslvareda.model.Result;
 import es.ieslvareda.model.Vehiculo;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImpVehiculoService implements IVehiculoService{
+public class ImpCocheService implements ICocheService{
 
+    // rellenar parametros
     @Override
-    public List<Vehiculo> getAll(){
-        List<Vehiculo> vehiculosList = new ArrayList<>();
-        DataSource dataSource = MyDataSource.getMyMariaDBDataSource();
+    public Result<Coche> createCoche(String matricula...){
 
+        DataSource dataSource = MyDataSource.getMyOracleDataSource();
+
+        ////////////////////////////////////////////////////////////
+        String sql = "{call GESTIONVEHICULOS.insertarCoche(?,?,?,?,?,?,?,?,?,?,?)}";
         try(Connection connection = dataSource.getConnection();
-        Statement statement = connection.createStatement();
-
-        ResultSet resultSet = statement.executeQuery("select * from vehiculo")){
-            String matricula;
-            float precioHora;
-            String marca;
-            String color;
-            String estado;
-            int idCarnet;
-
-            while (resultSet.next()){
+            // este es callable statement
+            CallableStatement callableStatement = connection.prepareCall(sql);
+       {
+                callableStatement.setString(1,matricula);
                 matricula = resultSet.getString("matricula");
                 precioHora = resultSet.getFloat("precioHora");
                 marca = resultSet.getString("marca");
@@ -36,13 +32,15 @@ public class ImpVehiculoService implements IVehiculoService{
                 estado = resultSet.getString("estado");
                 idCarnet = resultSet.getInt("idCarnet");
 
-                vehiculosList.add(new Vehiculo(matricula,precioHora,marca,color,estado,idCarnet));
+                callableStatement.execute();
 
-            }
+
         }catch (SQLException throwables){
             throwables.printStackTrace();
         }
-    return vehiculosList;
+    return new Result.Success<>(200);
     }
+
+
 
 }

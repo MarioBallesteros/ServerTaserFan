@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface IVehiculoService {
     List<Vehiculo> getAll();
-    Result<Vehiculo> get(String matricula);
 
 }

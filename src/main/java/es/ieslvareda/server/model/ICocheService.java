@@ -4,10 +4,10 @@ import es.ieslvareda.model.Result;
 
 import java.util.List;
 
-public interface IPersonService {
+public interface ICocheService {
 
-    List<Person> getAll();
-    Result<Person> get(String dni);
+    // formar todo el CRUD y pasar parametros
+    Result<Coche> createCoche(String dni);
     boolean update(Person person);
     boolean delete(String dni);
     Result<Person> add(Person person);
