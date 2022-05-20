@@ -39,7 +39,7 @@ public class PersonController {
         logger.info("Add new person");
 
         String body = request.body();
-        Person p = jsonTransformer.getObjet(body,Person.class);
+        Person p = jsonTransformer.getObject(body,Person.class);
         Result<Person> result = service.add(p);
 
         if(result instanceof Result.Success)

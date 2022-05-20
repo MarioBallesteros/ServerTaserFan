@@ -7,6 +7,7 @@ public class Vehiculo {
     private String color;
     private String estado;
     private int idCarnet;
+    private Tabla tabla;
 
 
     public Vehiculo(String matricula, float precioHora, String marca, String color,String estado, int idCarnet) {
