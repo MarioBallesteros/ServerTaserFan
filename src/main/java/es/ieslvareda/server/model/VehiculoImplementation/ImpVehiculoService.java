@@ -34,7 +34,7 @@ public class ImpVehiculoService implements IVehiculoService {
                 estado = resultSet.getString("estado");
                 idCarnet = resultSet.getInt("idCarnet");
 
-                vehiculosList.add(new Vehiculo(matricula,precioHora,marca,color,estado,idCarnet));
+                vehiculosList.add(new Vehiculo(matricula,precioHora,marca, descripcion, color, bateria, fechaAdq, estado,idCarnet, tabla));
 
             }
         }catch (SQLException throwables){

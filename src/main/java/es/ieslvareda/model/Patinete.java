@@ -12,7 +12,7 @@ public class Patinete extends Vehiculo{
 
 
     public Patinete(String matricula, float precioHora, String marca, String color, String estado, int idCarnet,int numRuedas,float tamanyo) {
-        super(matricula, precioHora, marca, color, estado, idCarnet);
+        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, idCarnet, tabla);
         this.numRuedas = numRuedas;
         this.tamanyo = tamanyo;
     }

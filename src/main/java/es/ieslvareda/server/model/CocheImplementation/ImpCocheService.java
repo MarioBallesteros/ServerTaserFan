@@ -4,15 +4,17 @@ import es.ieslvareda.model.Coche;
 import es.ieslvareda.model.MyDataSource;
 import es.ieslvareda.model.Result;
 import es.ieslvareda.server.model.CocheImplementation.ICocheService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.sql.DataSource;
 import java.sql.*;
 
 public class ImpCocheService implements ICocheService {
 
-    // rellenar parametros
+    static Logger logger = LoggerFactory.getLogger(ImpCocheService.class);
     @Override
-    public Result<Coche> createCoche(String matricula,float precioHora,String marca,String color,String estado,int idCarnet){
+    public Result<Coche> createCoche(Coche coche){
 
         DataSource dataSource = MyDataSource.getMyOracleDataSource();
 
@@ -21,14 +23,18 @@ public class ImpCocheService implements ICocheService {
             // este es callable statement
             CallableStatement callableStatement = connection.prepareCall(sql)) {
 
-                callableStatement.setString(1,matricula);
-                callableStatement.setFloat(2,precioHora);
-                callableStatement.setString(3,marca);
-                callableStatement.setString(4,color);
-                callableStatement.setString(5,estado);
-                callableStatement.setInt(6,idCarnet);
-                // AÑADIR TAMBIEN NUMPUERTAS Y NUMPLAZAS /////////
-                callableStatement.execute();
+            callableStatement.setString(1,coche.getMatricula());
+            callableStatement.setFloat(2,coche.getPrecioHora());
+             // AÑADIR TAMBIEN NUMPUERTAS Y NUMPLAZAS /////////
+             callableStatement.setString(3,coche.getMarca());
+             callableStatement.setString(4,coche.getDescripcion());
+             callableStatement.setString(5,coche.getColor());
+             callableStatement.setFloat(6,coche.getBateria());
+             callableStatement.setDate(7,coche.getFechaAdq());
+             callableStatement.setInt(8,coche.getIdCarnet());
+             callableStatement.setString(9,coche.getEstado());
+             callableStatement.setString(10,coche.getMatricula());
+            callableStatement.execute();
 
 
         }catch (SQLException throwables){
@@ -43,7 +49,7 @@ public class ImpCocheService implements ICocheService {
     }
 
     @Override
-    public Result<Coche> updateCoche(String matricula, float precioHora, String marca, String color, String estado, int idCarnet) {
+    public Result<Coche> updateCoche(Coche coche) {
         return null;
     }
 

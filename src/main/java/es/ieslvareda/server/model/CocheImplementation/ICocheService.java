@@ -8,8 +8,8 @@ import java.util.List;
 public interface ICocheService {
 
     // formar todo el CRUD y pasar parametros
-    Result<Coche> createCoche(String matricula,float precioHora,String marca,String color,String estado,int idCarnet);
+    Result<Coche> createCoche(Coche coche);
     Result<Coche> readCoche(String matricula);
-    Result<Coche> updateCoche(String matricula,float precioHora,String marca,String color,String estado,int idCarnet);
+    Result<Coche> updateCoche(Coche coche);
     Result<Coche> deleteCoche(String matricula);
 }

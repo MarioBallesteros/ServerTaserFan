@@ -1,11 +1,13 @@
 package es.ieslvareda.model;
 
+import java.sql.Date;
+
 public class Coche extends Vehiculo{
     private int numPlazas;
     private int numPuertas;
 
-    public Coche(String matricula, float precioHora, String marca, String color, String estado, int idCarnet,int numPlazas,int numPuertas) {
-        super(matricula, precioHora, marca, color, estado, idCarnet);
+    public Coche(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, Date fechaAdq, String estado, int idCarnet, Tabla tabla, int numPlazas, int numPuertas) {
+        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, idCarnet, tabla);
         this.numPlazas = numPlazas;
         this.numPuertas = numPuertas;
     }

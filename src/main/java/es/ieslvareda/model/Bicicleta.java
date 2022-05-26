@@ -5,7 +5,7 @@ public class Bicicleta extends Vehiculo{
 
 
     public Bicicleta(String matricula, float precioHora, String marca, String color, String estado, int idCarnet,String tipo) {
-        super(matricula, precioHora, marca, color, estado, idCarnet);
+        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, idCarnet, tabla);
         this.tipo = tipo;
     }
 
