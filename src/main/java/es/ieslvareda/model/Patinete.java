@@ -1,21 +1,15 @@
 package es.ieslvareda.model;
 
 public class Patinete extends Vehiculo{
-    private String matricula;
-    private float precioHora;
-    private String marca;
-    private String color;
-    private String estado;
-    private int idCarnet;
     private int numRuedas;
     private float tamanyo;
 
-
-    public Patinete(String matricula, float precioHora, String marca, String color, String estado, int idCarnet,int numRuedas,float tamanyo) {
-        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, idCarnet, tabla);
+    public Patinete(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, String fechaAdq, String estado, String carnet,int numRuedas,float tamanyo) {
+        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, carnet);
         this.numRuedas = numRuedas;
         this.tamanyo = tamanyo;
     }
+
 
     public void setNumRuedas(int numRuedas) {
         this.numRuedas = numRuedas;

@@ -11,27 +11,27 @@ import java.util.List;
 public class Model {
 
     // MariaDB
-    public List<Person> getPersons(){
+    public List<Empleado> getPersons(){
 
-        List<Person> personList = new ArrayList<>();
-        DataSource dataSource = MyDataSource.getMyMariaDBDataSource();
+        List<Empleado> empleadoList = new ArrayList<>();
+        DataSource dataSource = MyDataSource.getMyOracleDataSource();
 
         try(Connection con = dataSource.getConnection();
             Statement statement = con.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from person")){
+            ResultSet resultSet = statement.executeQuery("select * from empleado")){
 
             String dni;
             String nombre;
             String apellidos;
-            int edad;
+            String email;
 
             while(resultSet.next()){
                 dni = resultSet.getString("dni");
                 nombre = resultSet.getString("nombre");
                 apellidos = resultSet.getString("apellidos");
-                edad = resultSet.getInt("edad");
+                email = resultSet.getString("email");
 
-                personList.add(new Person(dni,nombre,apellidos,edad));
+                empleadoList.add(new Empleado(dni,nombre,apellidos,email));
 
             }
 
@@ -41,7 +41,7 @@ public class Model {
         }
 
 
-        return personList;
+        return empleadoList;
 
     }
     public Person addPerson(Person person){
