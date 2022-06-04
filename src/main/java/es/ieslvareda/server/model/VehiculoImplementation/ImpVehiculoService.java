@@ -24,7 +24,7 @@ public class ImpVehiculoService implements IVehiculoService {
             String marca;
             String color;
             String estado;
-            int idCarnet;
+            String carnet;
 
             while (resultSet.next()){
                 matricula = resultSet.getString("matricula");
@@ -32,9 +32,9 @@ public class ImpVehiculoService implements IVehiculoService {
                 marca = resultSet.getString("marca");
                 color = resultSet.getString("color");
                 estado = resultSet.getString("estado");
-                idCarnet = resultSet.getInt("idCarnet");
+                carnet = resultSet.getString("carnet");
 
-                vehiculosList.add(new Vehiculo(matricula,precioHora,marca, descripcion, color, bateria, fechaAdq, estado,idCarnet, tabla));
+                vehiculosList.add(new Vehiculo(matricula,precioHora,marca, descripcion, color, bateria, fechaAdq, estado,carnet));
 
             }
         }catch (SQLException throwables){

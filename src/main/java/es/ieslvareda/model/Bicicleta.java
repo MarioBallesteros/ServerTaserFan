@@ -3,11 +3,11 @@ package es.ieslvareda.model;
 public class Bicicleta extends Vehiculo{
     private String tipo;
 
-
-    public Bicicleta(String matricula, float precioHora, String marca, String color, String estado, int idCarnet,String tipo) {
-        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, idCarnet, tabla);
+    public Bicicleta(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, String fechaAdq, String estado, String carnet) {
+        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, carnet);
         this.tipo = tipo;
     }
+
 
     public String getTipo() {
         return tipo;

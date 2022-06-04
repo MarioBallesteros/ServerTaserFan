@@ -3,7 +3,6 @@ package es.ieslvareda.server.model.CocheImplementation;
 import es.ieslvareda.model.Coche;
 import es.ieslvareda.model.MyDataSource;
 import es.ieslvareda.model.Result;
-import es.ieslvareda.server.model.CocheImplementation.ICocheService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,8 +29,8 @@ public class ImpCocheService implements ICocheService {
              callableStatement.setString(4,coche.getDescripcion());
              callableStatement.setString(5,coche.getColor());
              callableStatement.setFloat(6,coche.getBateria());
-             callableStatement.setDate(7,coche.getFechaAdq());
-             callableStatement.setInt(8,coche.getIdCarnet());
+             callableStatement.setString(7,coche.getFechaAdq());
+             callableStatement.setString(8,coche.getCarnet());
              callableStatement.setString(9,coche.getEstado());
              callableStatement.setString(10,coche.getMatricula());
             callableStatement.execute();

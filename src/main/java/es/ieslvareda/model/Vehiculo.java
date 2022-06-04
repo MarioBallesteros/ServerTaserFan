@@ -1,7 +1,5 @@
 package es.ieslvareda.model;
 
-import java.sql.Date;
-
 public class Vehiculo {
     private String matricula;
     private float precioHora;
@@ -9,13 +7,12 @@ public class Vehiculo {
     private String descripcion;
     private String color;
     private float bateria;
-    private Date fechaAdq;
-    private int idCarnet;
+    private String fechaAdq;
+    private String carnet;
     private String estado;
-    private Tabla tabla;
 
 
-    public Vehiculo(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, Date fechaAdq, String estado, int idCarnet, Tabla tabla) {
+    public Vehiculo(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, String fechaAdq, String estado, String carnet) {
         this.matricula = matricula;
         this.precioHora = precioHora;
         this.marca = marca;
@@ -24,8 +21,7 @@ public class Vehiculo {
         this.bateria = bateria;
         this.fechaAdq = fechaAdq;
         this.estado = estado;
-        this.idCarnet = idCarnet;
-        this.tabla = tabla;
+        this.carnet = carnet;
     }
 
 
@@ -69,12 +65,12 @@ public class Vehiculo {
         this.estado = estado;
     }
 
-    public int getIdCarnet() {
-        return idCarnet;
+    public String getCarnet() {
+        return carnet;
     }
 
-    public void setIdCarnet(int idCarnet) {
-        this.idCarnet = idCarnet;
+    public void setCarnet(String carnet) {
+        this.carnet = carnet;
     }
 
     public String getDescripcion() {
@@ -93,20 +89,13 @@ public class Vehiculo {
         this.bateria = bateria;
     }
 
-    public Date getFechaAdq() {
+    public String getFechaAdq() {
         return fechaAdq;
     }
 
-    public void setFechaAdq(Date fechaAdq) {
+    public void setFechaAdq(String fechaAdq) {
         this.fechaAdq = fechaAdq;
     }
 
-    public Tabla getTabla() {
-        return tabla;
-    }
-
-    public void setTabla(Tabla tabla) {
-        this.tabla = tabla;
-    }
 }
 
