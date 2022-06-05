@@ -9,11 +9,14 @@ public class Empleado {
     private String apellidos;
     private String email;
 
-    public Empleado(String dni,String nombre,String apellidos,String email){
+    private String domicilio;
+
+    public Empleado(String dni,String nombre,String apellidos,String email,String domicilio){
         this.dni = dni;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
+        this.domicilio = domicilio;
     }
 
     public String getDni() {
@@ -48,4 +51,11 @@ public class Empleado {
         this.email = email;
     }
 
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
 }
