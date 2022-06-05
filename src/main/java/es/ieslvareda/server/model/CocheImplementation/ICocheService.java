@@ -11,5 +11,5 @@ public interface ICocheService {
     Result<Coche> createCoche(Coche coche);
     Result<Coche> readCoche(String matricula);
     Result<Coche> updateCoche(Coche coche);
-    Result<Coche> deleteCoche(String matricula);
+    Result<String> deleteCoche(String matricula);
 }

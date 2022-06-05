@@ -6,13 +6,15 @@ public class Vehiculo {
     private String marca;
     private String descripcion;
     private String color;
-    private float bateria;
+    private int bateria;
     private String fechaAdq;
     private String carnet;
     private String estado;
 
+    private TipoVehiculo tipoVehiculo;
 
-    public Vehiculo(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, String fechaAdq, String estado, String carnet) {
+
+    public Vehiculo(String matricula, float precioHora, String marca, String descripcion, String color, int bateria, String fechaAdq, String estado, String carnet,TipoVehiculo tipoVehiculo) {
         this.matricula = matricula;
         this.precioHora = precioHora;
         this.marca = marca;
@@ -22,8 +24,16 @@ public class Vehiculo {
         this.fechaAdq = fechaAdq;
         this.estado = estado;
         this.carnet = carnet;
+        this.tipoVehiculo = tipoVehiculo;
     }
 
+    public TipoVehiculo getTipoVehiculo() {
+        return tipoVehiculo;
+    }
+
+    public void setTipoVehiculo(TipoVehiculo tipoVehiculo) {
+        this.tipoVehiculo = tipoVehiculo;
+    }
 
     public String getMatricula() {
         return matricula;
@@ -81,11 +91,11 @@ public class Vehiculo {
         this.descripcion = descripcion;
     }
 
-    public float getBateria() {
+    public int getBateria() {
         return bateria;
     }
 
-    public void setBateria(float bateria) {
+    public void setBateria(int bateria) {
         this.bateria = bateria;
     }
 

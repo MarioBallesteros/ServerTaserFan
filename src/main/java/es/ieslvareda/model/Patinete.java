@@ -4,8 +4,8 @@ public class Patinete extends Vehiculo{
     private int numRuedas;
     private float tamanyo;
 
-    public Patinete(String matricula, float precioHora, String marca, String descripcion, String color, float bateria, String fechaAdq, String estado, String carnet,int numRuedas,float tamanyo) {
-        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, carnet);
+    public Patinete(String matricula, float precioHora, String marca, String descripcion, String color, int bateria, String fechaAdq, String estado, String carnet, TipoVehiculo tipoVehiculo,int numRuedas,float tamanyo) {
+        super(matricula, precioHora, marca, descripcion, color, bateria, fechaAdq, estado, carnet, tipoVehiculo);
         this.numRuedas = numRuedas;
         this.tamanyo = tamanyo;
     }
