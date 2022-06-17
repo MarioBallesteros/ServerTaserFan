@@ -4,8 +4,8 @@ import es.ieslvareda.model.*;
 import es.ieslvareda.server.model.JsonTransformer;
 import es.ieslvareda.server.model.VehiculoImplementation.IVehiculoService;
 import es.ieslvareda.server.model.VehiculoImplementation.ImpVehiculoService;
-import org.eclipse.jetty.client.api.Request;
-import org.eclipse.jetty.client.api.Response;
+import spark.Request;
+import spark.Response;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
